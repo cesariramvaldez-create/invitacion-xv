@@ -1,4 +1,4 @@
-// Cuenta Regresiva para el 9 de Mayo de 2026
+// --- CUENTA REGRESIVA ---
 const targetDate = new Date("May 9, 2026 18:00:00").getTime(); 
 
 const updateTimer = setInterval(() => {
@@ -15,20 +15,39 @@ const updateTimer = setInterval(() => {
     }
 }, 1000);
 
-// --- LÓGICA DE LA PANTALLA DE BIENVENIDA Y MÚSICA ---
+// --- LÓGICA DE LA PORTADA Y MÚSICA ---
 const welcomeScreen = document.getElementById('welcome-screen');
 const openBtn = document.getElementById('open-btn');
 const audio = document.getElementById('musica-fondo');
+const musicToggleBtn = document.getElementById('music-toggle');
 
 openBtn.addEventListener('click', () => {
-    // 1. Iniciar la música
-    audio.play();
+    // Intentar reproducir la música con control de errores
+    audio.play().then(() => {
+        musicToggleBtn.innerHTML = "⏸️"; // Cambia el ícono a pausa
+    }).catch((error) => {
+        console.log("El navegador requiere más interacción para reproducir:", error);
+    });
     
-    // 2. Desvanecer la pantalla de bienvenida
+    // Mostrar el botón flotante
+    musicToggleBtn.style.display = 'flex';
+
+    // Desvanecer la portada suavemente
     welcomeScreen.style.opacity = '0';
     
-    // 3. Quitar el elemento después de la transición (1 segundo)
+    // Quitar el elemento después de que termine la animación (1.5 segundos)
     setTimeout(() => {
         welcomeScreen.style.display = 'none';
-    }, 1000);
+    }, 1500);
+});
+
+// --- LÓGICA DEL BOTÓN FLOTANTE ---
+musicToggleBtn.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+        musicToggleBtn.innerHTML = "⏸️";
+    } else {
+        audio.pause();
+        musicToggleBtn.innerHTML = "🎵";
+    }
 });
