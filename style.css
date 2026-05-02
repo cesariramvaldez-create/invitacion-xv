@@ -1,0 +1,104 @@
+:root {
+    --blue-dark: #020617;
+    --blue-glow: #1e3a8a;
+    --gold: #d4af37;
+    --white: #f8fafc;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at center, var(--blue-glow) 0%, var(--blue-dark) 100%);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animación de Estrellas */
+#stars {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 10vw 20vh #fff, 50vw 40vh #fff, 80vw 10vh #fff, 30vw 80vh #fff, 70vw 70vh #fff, 90vw 50vh #fff, 20vw 90vh #fff, 60vw 15vh #fff;
+    position: fixed;
+    top: 0;
+    animation: blink 3s infinite;
+    z-index: -1;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    width: 95%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.photo-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.main-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.info-section {
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+}
+
+.title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    margin-bottom: 10px;
+    margin-top: 0;
+    color: var(--white);
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.countdown {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.recommendations {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    display: inline-block;
+}
+
+.recommendations li {
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+.venue {
+    margin-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+    font-size: 1.1rem;
+}
