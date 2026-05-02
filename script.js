@@ -14,3 +14,21 @@ const updateTimer = setInterval(() => {
         document.getElementById("timer").innerHTML = `¡Faltan ${days} días!`;
     }
 }, 1000);
+
+// --- LÓGICA DE LA PANTALLA DE BIENVENIDA Y MÚSICA ---
+const welcomeScreen = document.getElementById('welcome-screen');
+const openBtn = document.getElementById('open-btn');
+const audio = document.getElementById('musica-fondo');
+
+openBtn.addEventListener('click', () => {
+    // 1. Iniciar la música
+    audio.play();
+    
+    // 2. Desvanecer la pantalla de bienvenida
+    welcomeScreen.style.opacity = '0';
+    
+    // 3. Quitar el elemento después de la transición (1 segundo)
+    setTimeout(() => {
+        welcomeScreen.style.display = 'none';
+    }, 1000);
+});
