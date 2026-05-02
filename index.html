@@ -3,50 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valeria XV - Gala de Invitación</title>
+    <title>Valeria XV - Invitación</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Fuentes de Google: 'Great Vibes' para el título, 'Playfair Display' para el texto -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Fondo de galaxia exterior -->
-    <div class="galaxy-bg"></div>
+    <!-- Efecto de Estrellas -->
+    <div id="stars"></div>
 
-    <main class="main-container">
-        <!-- El marco de filigrana que encierra todo -->
-        <article class="invitation-card">
+    <main class="container">
+        <section class="photo-section">
+            <img src="image_950627.png" alt="Valeria" class="main-photo">
+        </section>
+
+        <section class="info-section">
+            <h1 class="title">Valeria XV</h1>
+            <div class="countdown" id="timer">Cargando cuenta regresiva...</div>
             
-            <section class="photo-pane">
-                <img src="image_950627.png" alt="Valeria en su vestido azul" class="main-photo">
-                <div class="photo-glow"></div>
-            </section>
+            <div class="content">
+                <p class="intro">Y como queremos que disfrutes al máximo este día te mando algunas recomendaciones:</p>
+                <ul class="recommendations">
+                    <li>✨ Recuerda llevar algo para abrigarte</li>
+                    <li>💃 Zapatos cómodos para bailar</li>
+                    <li>😊 ¡Traer tu mejor sonrisa y actitud para divertirnos!</li>
+                </ul>
+            </div>
 
-            <section class="info-pane">
-                <h1 class="title-gala">Valeria XV</h1>
-                
-                <div class="countdown-gala" id="timer">¡Faltan 7 días!</div>
-                
-                <div class="content-gala">
-                    <p class="intro">Y como queremos que disfrutes al máximo este día te mando algunas recomendaciones:</p>
-                    <ul class="recommendations-gala">
-                        <li><span class="gold-icon">✨</span> Recuerda llevar algo para abrigarte</li>
-                        <li><span class="gold-icon">💃</span> Zapatos cómodos para bailar</li>
-                        <li><span class="gold-icon">🥰</span> ¡Traer tu mejor sonrisa y actitud para divertirnos!</li>
-                    </ul>
-                </div>
-
-                <!-- Separador de luz y filigrana -->
-                <div class="ornate-divider"></div>
-
-                <div class="venue-gala">
-                    <p><strong>Misa:</strong> Samara</p>
-                    <p><strong>Recepción:</strong> G&G</p>
-                </div>
-
-                <!-- Sello de lacre -->
-                <div class="wax-seal">V</div>
-            </section>
-        </article>
+            <div class="venue">
+                <p><strong>Misa:</strong> Samara</p>
+                <p><strong>Recepción:</strong> G&G</p>
+            </div>
+        </section>
     </main>
 
     <script src="script.js"></script>
